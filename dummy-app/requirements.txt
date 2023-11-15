@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn 
+Flask
+SQLAlchemy
+requests
+dash
+flake8
+black
+pytest
