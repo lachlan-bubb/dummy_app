@@ -10,4 +10,3 @@ dash
 flake8
 black
 pytest
-poetry
