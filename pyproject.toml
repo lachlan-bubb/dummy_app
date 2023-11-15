@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dummy-app2"
+name = "dummy-app"
 version = "0.1.0"
 description = "My dummy dash app"
 authors = ["Lachlan Bubb <lachlan_bubb@live.com>"]
