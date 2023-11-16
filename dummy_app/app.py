@@ -17,7 +17,7 @@ import requests
 path = ""
 db_file = path + "test.db"
 model_file = path + "finalized_model.sav"
-host = "http://127.0.0.1:8000"
+host = "http://127.0.0.1:5500"
 # host = "http://127.0.0.1:8000"
 
 
