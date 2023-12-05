@@ -18,15 +18,31 @@
           - build simple tests
           - run on github actions on push
   - create docker file that can run and query data -- done
-      - docker to create and publish dockerfile?
+      - docker to create and publish dockerfile
   - Package pipeline - done
+    - Test building + importing package -- done
+    - Publish package -- done
   - Convert env to poetry - done
-  - host App + serve dataset on cloud platform
-      - how to connect api to app
-      - Run API + App in same env: https://docs.docker.com/config/containers/multi-service_container/
+  - Host App + serve dataset on cloud platform
+      - Get app to deploy to hosted service
+        - how to connect api to app -- done
+            - Update Docker App 
+                - use Gunicorn
+                - Run API + App in same env -- done
+                    -  https://docs.docker.com/config/containers/multi-service_container/
+      - Get deployment to use package
+      - Connect deployments to github actions
+      
   
 # Useful code
 ```
+# Poetry
+poetry update
+poetry install
+poetry build
+poetry config pypi-token.pypi  <token>
+poetry publish -- build
+
 # Run app
 python  dummy_app/model_api_v2.py & 
 sleep 5 
