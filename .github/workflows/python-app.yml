@@ -47,16 +47,24 @@ jobs:
       run: | 
         poetry build
 
-
-    - name: Debugging Info
+    - name: Print secrets
       run: |
-        cat $HOME/.config/pypoetry/config.toml
-        echo "GitHub Environment Variables:"
-        printenv  
+        echo "PyPI Username: $POETRY_PYPI_USERNAME"
+        echo "PyPI Token: $POETRY_PYPI_TOKEN"
+        echo "PyPI Token: $PYPI_API_TOKEN"
 
-    # - name: Publish package [broken]
-    #   # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    #   env:
-    #     POETRY_PYPI_USERNAME: ${{ secrets.POETRY_PYPI_USERNAME }}
-    #     POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
-    #   run: poetry publish --build
+    # - name: Debugging Info
+    #   run: |
+    #     cat $HOME/.config/pypoetry/config.toml
+    #     echo "GitHub Environment Variables:"
+    #     printenv  
+
+    - name: Publish package [broken]
+      # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      # env:
+        # POETRY_PYPI_USERNAME: ${{ secrets.POETRY_PYPI_USERNAME }}
+        # POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
+        # PYPI_API_TOKEN
+      run: | 
+        poetry config pypi-token.pypi-username ${{ secrets.POETRY_PYPI_TOKEN }}
+        poetry publish --build
