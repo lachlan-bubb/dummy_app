@@ -45,8 +45,8 @@ jobs:
     - name: Build package
       run: poetry build
 
-    # - name: Publish package
-    #   env:
-    #     POETRY_PYPI_USERNAME: ${{ secrets.POETRY_PYPI_USERNAME }}
-    #     POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
-    #   run: poetry publish --build
+    - name: Publish package
+      env:
+        POETRY_PYPI_USERNAME: ${{ secrets.POETRY_PYPI_USERNAME }}
+        POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
+      run: poetry publish --build

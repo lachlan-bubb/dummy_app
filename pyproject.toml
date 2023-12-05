@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dummy-app"
-version = "0.0.1"
+version = "0.0.2"
 description = "My dummy dash app"
 authors = ["Lachlan Bubb <lachlan_bubb@live.com>"]
 readme = "README.md"
