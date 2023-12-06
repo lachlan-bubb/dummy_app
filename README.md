@@ -32,8 +32,21 @@
                     -  https://docs.docker.com/config/containers/multi-service_container/
       - Get deployment to use package
       - Connect deployments to github actions
-      
-  
+
+# Run App local notes
+In one terminal
+python model_api_v2.py
+in another terminal
+python app.py
+
+# Docker notes
+## Build image
+Must run from directory container dockerfile.
+docker build -t flask-api-image .
+## Run container
+Must run from base directory.
+docker run -p 8050:8050 flask-api-image
+
 # Useful code
 ```
 # Poetry

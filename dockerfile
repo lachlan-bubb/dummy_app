@@ -22,4 +22,20 @@ EXPOSE 8050
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["poetry", "run", "python", "dummy_app/app.py"]
+COPY entrypoint.sh /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh
+CMD ["/usr/src/app/entrypoint.sh"]
+
+
+# CMD ["poetry", "run", "python", "dummy_app/app.py"]
+# CMD ["poetry", "run", "python", "dummy_app/model_api_v2.py", "&", "sleep", "5"]
+# CMD ["poetry", "run", "python", "dummy_app/app.py"]
+
+
+# CMD poetry run python dummy_app/model_api_v2.py && sleep 5 
+# CMD poetry run python dummy_app/app.py
+
+
+# poetry run python  dummy_app/model_api_v2.py & 
+# sleep 5 
+# poetry run python dummy_app/app.py
