@@ -19,10 +19,11 @@
           - run on github actions on push
   - create docker file that can run and query data -- done
       - docker to create and publish dockerfile
+  - Convert env to poetry - done  
   - Package pipeline - done
     - Test building + importing package -- done
     - Publish package -- done
-  - Convert env to poetry - done
+    - Publish using github actions 
   - Host App + serve dataset on cloud platform
       - Get app to deploy to hosted service
         - how to connect api to app -- done
