@@ -64,9 +64,7 @@ jobs:
       #   POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
       #   PYPI_API_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
       run: | 
-        echo $POETRY_PYPI_TOKEN
-        poetry config --list
-        
+        echo ${{ secrets.POETRY_PYPI_TOKEN }}        
         echo "test start"
         poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN }}
         echo "test end"
