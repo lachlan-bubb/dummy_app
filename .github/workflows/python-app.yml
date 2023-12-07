@@ -64,9 +64,16 @@ jobs:
         POETRY_PYPI_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
         PYPI_API_TOKEN: ${{ secrets.POETRY_PYPI_TOKEN }}
       run: | 
-        echo $PYPI_API_TOKEN
+        echo $POETRY_PYPI_TOKEN
         poetry config --list
         poetry config pypi --list
         
-        poetry config pypi-token.pypi-username $PYPI_API_TOKEN
+        export POETRY_PYPI_TOKEN=__your_pypi_token__
+
+        poetry config pypi-token.pypi $POETRY_PYPI_TOKEN
+        poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN }}
+
+        poetry config pypi --list
+
+        # poetry config pypi-token.pypi-username $PYPI_API_TOKEN
         poetry publish --build
