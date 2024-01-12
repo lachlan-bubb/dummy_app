@@ -33,6 +33,7 @@
                     -  https://docs.docker.com/config/containers/multi-service_container/
       - Get deployment to use package
       - Connect deployments to github actions
+  - Introduce Strava api to pull stats
 
 # Run App local notes
 In one terminal
